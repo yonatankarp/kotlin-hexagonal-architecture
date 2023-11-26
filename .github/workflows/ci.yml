@@ -32,7 +32,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        service: [ kotlin, quarkus, springboot ]
+        service: [ model, application, adapter, bootstrap ]
     runs-on: ubuntu-latest
     permissions:
       actions: read
