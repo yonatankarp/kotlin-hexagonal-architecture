@@ -18,6 +18,10 @@ The core business logic we want to have in the application is as follow:
 - After adding a product, the total quantity of this product in the cart must
   not exceed the amount of the product available in the warehouse.
 
+## System Overview
+
+![system-overview-diagram](docs/system-overview-diagram.png)
+
 ---
 
 The repository is split into 3 different modules:
