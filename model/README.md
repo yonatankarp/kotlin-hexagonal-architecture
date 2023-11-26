@@ -8,3 +8,11 @@ identity and are immutable).
 ## Class Diagram
 
 ![class-diagram](etc/class-diagram.png)
+
+## Fixture
+
+The project contains test fixture for the following classes:
+
+- [CartFixture](src/testFixtures/kotlin/com/yonatankarp/shop/model/cart/CartFixture.kt)
+- [MoneyFixture](src/testFixtures/kotlin/com/yonatankarp/shop/model/money/MoneyFixture.kt)
+- [ProductFixture](src/testFixtures/kotlin/com/yonatankarp/shop/model/product/ProductFixture.kt)
