@@ -1,7 +1,6 @@
 rootProject.name = "kotlin-hexagonal-architecture"
 
-include(
-    "kotlin",
-    "quarkus",
-    "springboot",
-)
+include("model")
+include("application")
+include("adapter")
+include("bootstrap")
