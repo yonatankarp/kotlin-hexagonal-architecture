@@ -4,7 +4,6 @@ coroutines = "1.7.3"
 junit = "5.10.1"
 jvm = "17"
 kotlin = "1.9.21"
-kotlinJunitTools = "0.1.0"
 mockk = "1.13.8"
 spotless = "6.22.0"
 
@@ -18,7 +17,6 @@ kotlinx_coroutines_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-t
 # Tests
 junit = { module = "org.junit.jupiter:junit-jupiter" }
 junit_bom = { module = "org.junit:junit-bom", version.ref = "junit" }
-kotlin_junit_tools = {module = "com.yonatankarp:kotlin-junit-tools", version.ref = "kotlinJunitTools"}
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 [plugins]
