@@ -17,10 +17,10 @@ data class Cart(
             .map(CartLineItem::quantity)
             .sum()
 
-    fun subTotal(): Money =
+    fun subTotal(): Money? =
         lineItems.values
             .map(CartLineItem::subTotal)
-            .reduce(Money::plus)
+            .reduceOrNull(Money::plus)
 
     @Throws(NotEnoughItemsInStockException::class)
     fun addProduct(
