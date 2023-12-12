@@ -6,7 +6,7 @@ import com.yonatankarp.shop.model.money.Money
 data class CartWebModel(
     val lineItems: List<CartLineItemWebModel>,
     val numberOfItems: Int,
-    val subTotal: Money,
+    val subTotal: Money?,
 ) {
     companion object {
         fun fromDomainModel(cart: Cart): CartWebModel =

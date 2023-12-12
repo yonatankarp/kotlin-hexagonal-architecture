@@ -3,12 +3,14 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":adapter"))
     implementation(libs.bundles.kotlin.all)
+    implementation(libs.bundles.resteasy.all)
 
-    implementation("com.lemonappdev:konsist:0.13.0")
-
+    testImplementation(testFixtures(project(":adapter")))
     testImplementation(platform(libs.junit.bom))
     testImplementation(libs.bundles.tests.all)
+    testImplementation(libs.restassured.core)
 }
 
 tasks.test {

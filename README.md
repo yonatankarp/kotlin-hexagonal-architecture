@@ -1,4 +1,4 @@
-# kotlin-hexagonal-architecture
+# Kotlin Hexagonal Architecture
 
 Kotlin's implementation follows the [Hexagonal Architecture](https://www.happycoders.eu/software-craftsmanship/hexagonal-architecture/)
 series of articles
@@ -29,3 +29,10 @@ The core business logic we want to have in the application is as follow:
 
 ![system-overview-diagram](docs/system-overview-diagram.png)
 
+## Endpoints
+
+In this repository there is an [IntelliJ HTTP collection](sample-requests.http)
+that can be used to communicate with the service.
+
+To run the service, follow the instructions in the [bootstrap](./bootstrap/README.md)
+module.

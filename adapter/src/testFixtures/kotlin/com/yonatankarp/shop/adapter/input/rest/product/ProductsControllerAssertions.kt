@@ -1,12 +1,13 @@
 package com.yonatankarp.shop.adapter.input.rest.product
 
+import com.yonatankarp.shop.adapter.utilities.JsonExtensions.getBigDecimal
+import com.yonatankarp.shop.adapter.utilities.JsonExtensions.getCurrency
 import com.yonatankarp.shop.model.product.Product
 import io.restassured.path.json.JsonPath
 import io.restassured.response.Response
 import jakarta.ws.rs.core.Response.Status.OK
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNull
-import java.math.BigDecimal
 
 object ProductsControllerAssertions {
     fun assertThatResponseIsProductList(
@@ -46,12 +47,12 @@ object ProductsControllerAssertions {
         }
 
         assertEquals(
-            product.price.currency.currencyCode,
-            json.getString("${prefix}price.currency"),
+            product.price.currency,
+            json.getCurrency("${prefix}price.currency"),
         )
         assertEquals(
             product.price.amount,
-            BigDecimal.valueOf(json.getDouble("${prefix}price.amount")),
+            json.getBigDecimal("${prefix}price.amount"),
         )
 
         assertEquals(product.itemsInStock, json.getInt("${prefix}itemsInStock"))

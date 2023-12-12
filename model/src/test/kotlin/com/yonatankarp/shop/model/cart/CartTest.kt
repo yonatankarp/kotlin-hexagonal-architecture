@@ -5,6 +5,7 @@ import com.yonatankarp.shop.model.money.MoneyFixture.euros
 import com.yonatankarp.shop.model.product.ProductFixture.createTestProduct
 import org.junit.jupiter.api.Assertions.assertDoesNotThrow
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.params.ParameterizedTest
@@ -47,6 +48,16 @@ class CartTest {
         // Then
         assertEquals(8, cart.numberOfItems())
         assertEquals(euros(68, 82), cart.subTotal())
+    }
+
+    @Test
+    fun `given empty cart - numberOfItems and subTotal are calculated correctly`() {
+        // Given
+        val cart = emptyCartForRandomCustomer()
+
+        // Then
+        assertEquals(0, cart.numberOfItems())
+        assertNull(cart.subTotal())
     }
 
     @Test
