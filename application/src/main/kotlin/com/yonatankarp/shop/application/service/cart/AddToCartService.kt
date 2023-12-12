@@ -12,7 +12,7 @@ class AddToCartService(
     private val cartRepository: CartRepository,
     private val productRepository: ProductRepository,
 ) : AddToCartUseCase {
-    override fun addToCart(
+    override operator fun invoke(
         customerId: CustomerId,
         productId: ProductId,
         quantity: Int,

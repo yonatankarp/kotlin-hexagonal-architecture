@@ -17,7 +17,7 @@ class GetCartController(private val getCartUseCase: GetCartUseCase) {
         @PathParam("customerId") customerIdString: String,
     ): CartWebModel {
         val customerId = parseCustomerId(customerIdString)
-        val cart = getCartUseCase.getCart(customerId)
+        val cart = getCartUseCase(customerId)
         return CartWebModel.fromDomainModel(cart)
     }
 }

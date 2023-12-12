@@ -11,6 +11,7 @@ dependencies {
     testImplementation(platform(libs.junit.bom))
     testImplementation(libs.bundles.tests.all)
     testImplementation(libs.restassured.core)
+    testImplementation(libs.konsist.core)
 }
 
 tasks.test {

@@ -6,19 +6,19 @@ import org.jboss.resteasy.plugins.server.undertow.UndertowJaxrsServer
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.BeforeAll
 
-abstract class EndToEndTest {
-    companion object {
+internal abstract class EndToEndTest {
+    protected companion object {
         private lateinit var server: UndertowJaxrsServer
 
         @BeforeAll
         @JvmStatic
-        fun start() {
+        protected fun start() {
             server = Launcher.startOnPort(TEST_PORT)
         }
 
         @AfterAll
         @JvmStatic
-        fun stop() {
+        protected fun stop() {
             server.stop()
         }
     }

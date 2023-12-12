@@ -15,7 +15,7 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import java.util.concurrent.atomic.AtomicInteger
 
-abstract class AbstractCartRepositoryTest<T : CartRepository, U : ProductRepository> {
+internal abstract class AbstractCartRepositoryTest<T : CartRepository, U : ProductRepository> {
     @BeforeEach
     fun initRepositories() {
         persistTestProducts()

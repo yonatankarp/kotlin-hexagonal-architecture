@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
-class FindProductsServiceTest {
+internal class FindProductsServiceTest {
     private val testProduct1 = createTestProduct(euros(19, 99))
     private val testProduct2 = createTestProduct(euros(25, 99))
 

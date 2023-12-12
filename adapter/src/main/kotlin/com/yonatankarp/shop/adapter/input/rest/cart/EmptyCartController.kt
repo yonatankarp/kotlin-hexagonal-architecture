@@ -17,6 +17,6 @@ class EmptyCartController(private val emptyCartUseCase: EmptyCartUseCase) {
         @PathParam("customerId") customerIdString: String,
     ) {
         val customerId = parseCustomerId(customerIdString)
-        emptyCartUseCase.emptyCart(customerId)
+        emptyCartUseCase(customerId)
     }
 }

@@ -6,7 +6,7 @@ import io.mockk.mockk
 import io.mockk.verify
 import org.junit.jupiter.api.Test
 
-class EmptyCartServiceTest {
+internal class EmptyCartServiceTest {
     private val testCustomerId = CustomerId(61157)
     private val cartRepository = mockk<CartRepository>(relaxed = true)
     private val emptyCartService = EmptyCartService(cartRepository)
@@ -14,7 +14,7 @@ class EmptyCartServiceTest {
     @Test
     fun `empty cart invokes delete on the persistence port`() {
         // When
-        emptyCartService.emptyCart(testCustomerId)
+        emptyCartService(testCustomerId)
 
         // Then
         verify { cartRepository.deleteByCustomerId(testCustomerId) }

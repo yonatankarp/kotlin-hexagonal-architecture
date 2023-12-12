@@ -7,7 +7,7 @@ import com.yonatankarp.shop.model.customer.CustomerId
 class EmptyCartService(
     private val cartRepository: CartRepository,
 ) : EmptyCartUseCase {
-    override fun emptyCart(customerId: CustomerId) {
+    override fun invoke(customerId: CustomerId) {
         cartRepository.deleteByCustomerId(customerId)
     }
 }

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.assertThrows
 import java.math.BigDecimal
 import java.util.Currency
 
-class MoneyTest {
+internal class MoneyTest {
     @Test
     fun `given amount with an invalid scale, new Money throws IllegalArgumentException`() {
         val amountWithScale3 = BigDecimal.valueOf(12999, 3)

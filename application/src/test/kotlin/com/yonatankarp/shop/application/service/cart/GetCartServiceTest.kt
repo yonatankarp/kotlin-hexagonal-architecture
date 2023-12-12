@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-class GetCartServiceTest {
+internal class GetCartServiceTest {
     private val testCustomerId = CustomerId(61157)
     private val testProduct1 = createTestProduct(euros(19, 99))
     private val testProduct2 = createTestProduct(euros(25, 99))
@@ -31,7 +31,7 @@ class GetCartServiceTest {
         every { cartRepository.findByCustomerId(testCustomerId) } returns persistedCart
 
         // When
-        val cart = getCartService.getCart(testCustomerId)
+        val cart = getCartService(testCustomerId)
 
         // Then
         assertEquals(persistedCart, cart)
@@ -43,7 +43,7 @@ class GetCartServiceTest {
         every { cartRepository.findByCustomerId(testCustomerId) } returns null
 
         // When
-        val cart = getCartService.getCart(testCustomerId)
+        val cart = getCartService(testCustomerId)
 
         // Then
         assertTrue(cart.lineItems().isEmpty())

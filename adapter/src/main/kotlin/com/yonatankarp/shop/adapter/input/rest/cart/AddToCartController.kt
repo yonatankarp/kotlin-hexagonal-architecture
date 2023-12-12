@@ -29,7 +29,7 @@ class AddToCartController(private val addToCartUseCase: AddToCartUseCase) {
 
         return try {
             val cart =
-                addToCartUseCase.addToCart(customerId, productId, quantity)
+                addToCartUseCase(customerId, productId, quantity)
             CartWebModel.fromDomainModel(cart)
         } catch (e: ProductNotFoundException) {
             throw clientErrorException(

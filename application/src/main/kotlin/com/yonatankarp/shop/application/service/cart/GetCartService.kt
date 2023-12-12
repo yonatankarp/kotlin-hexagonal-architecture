@@ -8,7 +8,7 @@ import com.yonatankarp.shop.model.customer.CustomerId
 class GetCartService(
     private val cartRepository: CartRepository,
 ) : GetCartUseCase {
-    override fun getCart(customerId: CustomerId) =
+    override operator fun invoke(customerId: CustomerId) =
         cartRepository.findByCustomerId(customerId)
             ?: Cart(customerId)
 }

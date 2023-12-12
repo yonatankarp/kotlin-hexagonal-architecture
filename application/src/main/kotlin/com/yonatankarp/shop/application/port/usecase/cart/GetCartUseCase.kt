@@ -9,5 +9,5 @@ import com.yonatankarp.shop.model.customer.CustomerId
  * total price.
  */
 interface GetCartUseCase {
-    fun getCart(customerId: CustomerId): Cart
+    operator fun invoke(customerId: CustomerId): Cart
 }
