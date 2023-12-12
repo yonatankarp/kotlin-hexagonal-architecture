@@ -5,7 +5,10 @@ junit = "5.10.1"
 jvm = "17"
 kotlin = "1.9.21"
 mockk = "1.13.8"
+restassured = "5.3.2"
+resteasy = "6.2.6.Final"
 spotless = "6.23.3"
+jakarta = "3.1.0"
 
 [libraries]
 
@@ -14,10 +17,17 @@ kotlin_core = { module = "org.jetbrains.kotlin:kotlin-stdlib" }
 kotlinx_coroutines_core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 kotlinx_coroutines_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 
+# Rest
+jakarta_api = { module = "jakarta.ws.rs:jakarta.ws.rs-api", version.ref = "jakarta" }
+
 # Tests
 junit = { module = "org.junit.jupiter:junit-jupiter" }
 junit_bom = { module = "org.junit:junit-bom", version.ref = "junit" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+
+restassured_core = { module = "io.rest-assured:rest-assured", version.ref = "restassured" }
+resteasy_jackson = { module = "org.jboss.resteasy:resteasy-jackson2-provider", version.ref = "resteasy" }
+resteasy_undertow = { module = "org.jboss.resteasy:resteasy-undertow", version.ref = "resteasy" }
 
 [plugins]
 kotlin_jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
@@ -34,4 +44,9 @@ kotlin_all = [
 tests_all = [
     "junit",
     "mockk"
+]
+
+resteasy_all = [
+    "resteasy_jackson",
+    "resteasy_undertow",
 ]
