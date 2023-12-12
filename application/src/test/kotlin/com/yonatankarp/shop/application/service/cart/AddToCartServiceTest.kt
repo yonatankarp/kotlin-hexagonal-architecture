@@ -16,7 +16,7 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
-class AddToCartServiceTest {
+internal class AddToCartServiceTest {
     private val testCustomerId = CustomerId(61157)
     private val testProduct1 = createTestProduct(euros(19, 99))
     private val testProduct2 = createTestProduct(euros(25, 99))
@@ -41,8 +41,7 @@ class AddToCartServiceTest {
         every { cartRepository.findByCustomerId(testCustomerId) } returns persistedCart
 
         // When
-        val cart =
-            addToCartService.addToCart(testCustomerId, testProduct2.id, 3)
+        val cart = addToCartService(testCustomerId, testProduct2.id, 3)
 
         // Then
         verify { cartRepository.save(cart) }
@@ -64,7 +63,7 @@ class AddToCartServiceTest {
 
         // When
         val cart =
-            addToCartService.addToCart(
+            addToCartService(
                 customerId = testCustomerId,
                 productId = testProduct1.id,
                 quantity = 2,
@@ -87,7 +86,7 @@ class AddToCartServiceTest {
 
         // When
         assertThrows<ProductNotFoundException> {
-            addToCartService.addToCart(testCustomerId, productId, 1)
+            addToCartService(testCustomerId, productId, 1)
         }
 
         // Then
@@ -101,7 +100,7 @@ class AddToCartServiceTest {
 
         // When
         assertThrows<IllegalArgumentException> {
-            addToCartService.addToCart(
+            addToCartService(
                 testCustomerId,
                 testProduct1.id,
                 quantity,

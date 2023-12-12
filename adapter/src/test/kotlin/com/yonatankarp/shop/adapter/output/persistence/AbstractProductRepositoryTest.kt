@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-abstract class AbstractProductRepositoryTest<T : ProductRepository> {
+internal abstract class AbstractProductRepositoryTest<T : ProductRepository> {
     protected abstract fun createProductRepository(): T
 
     @Test

@@ -1,7 +1,7 @@
 package com.yonatankarp.shop.adapter.input.rest.cart
 
-import com.yonatankarp.shop.adapter.utilities.JsonExtensions.getBigDecimal
-import com.yonatankarp.shop.adapter.utilities.JsonExtensions.getCurrency
+import com.yonatankarp.shop.adapter.ext.JsonExt.getBigDecimal
+import com.yonatankarp.shop.adapter.ext.JsonExt.getCurrency
 import com.yonatankarp.shop.model.cart.Cart
 import io.restassured.response.Response
 import jakarta.ws.rs.core.Response.Status.OK

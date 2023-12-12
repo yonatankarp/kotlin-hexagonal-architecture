@@ -6,5 +6,5 @@ import com.yonatankarp.shop.model.customer.CustomerId
  * The customer should be able to empty their shopping cart.
  */
 interface EmptyCartUseCase {
-    fun emptyCart(customerId: CustomerId)
+    operator fun invoke(customerId: CustomerId)
 }

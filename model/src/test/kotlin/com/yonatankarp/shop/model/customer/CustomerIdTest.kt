@@ -5,7 +5,7 @@ import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource
 
-class CustomerIdTest {
+internal class CustomerIdTest {
     @ParameterizedTest
     @ValueSource(ints = [-100, -1, 0])
     fun `given a value less than 1 - new CustomerId - throws exception`(value: Int) {

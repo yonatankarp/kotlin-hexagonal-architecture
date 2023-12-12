@@ -11,7 +11,7 @@ import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource
 
-class CartTest {
+internal class CartTest {
     @Test
     fun `given empty cart - adding two products - products are in cart`() {
         // Given

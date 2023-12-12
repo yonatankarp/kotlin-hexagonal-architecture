@@ -14,7 +14,7 @@ interface AddToCartUseCase {
         ProductNotFoundException::class,
         NotEnoughItemsInStockException::class,
     )
-    fun addToCart(
+    operator fun invoke(
         customerId: CustomerId,
         productId: ProductId,
         quantity: Int,

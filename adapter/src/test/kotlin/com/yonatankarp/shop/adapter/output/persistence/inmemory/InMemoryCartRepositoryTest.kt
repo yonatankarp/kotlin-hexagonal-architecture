@@ -4,7 +4,7 @@ import com.yonatankarp.shop.adapter.output.persistence.AbstractCartRepositoryTes
 import com.yonatankarp.shop.application.port.out.persistence.CartRepository
 import com.yonatankarp.shop.application.port.out.persistence.ProductRepository
 
-class InMemoryCartRepositoryTest : AbstractCartRepositoryTest<CartRepository, ProductRepository>() {
+internal class InMemoryCartRepositoryTest : AbstractCartRepositoryTest<CartRepository, ProductRepository>() {
     override fun createCartRepository() = InMemoryCartRepository()
 
     override fun createProductRepository() = InMemoryProductRepository()

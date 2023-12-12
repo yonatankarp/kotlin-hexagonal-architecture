@@ -6,7 +6,7 @@ import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource
 
-class ProductIdTest {
+internal class ProductIdTest {
     @ParameterizedTest
     @ValueSource(strings = ["", "   "])
     fun `constructor - throws IllegalArgumentException - when value is blank`(value: String) {

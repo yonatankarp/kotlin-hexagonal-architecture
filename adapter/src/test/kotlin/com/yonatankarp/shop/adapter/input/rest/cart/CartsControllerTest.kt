@@ -62,7 +62,7 @@ internal class CartsControllerTest {
         cart.addProduct(TEST_PRODUCT_1, 3)
         cart.addProduct(TEST_PRODUCT_2, 5)
 
-        every { getCartUseCase.getCart(customerId) } returns cart
+        every { getCartUseCase(customerId) } returns cart
 
         // When
         val response =
@@ -86,7 +86,7 @@ internal class CartsControllerTest {
         cart.addProduct(TEST_PRODUCT_1, quantity)
 
         every {
-            addToCartUseCase.addToCart(
+            addToCartUseCase(
                 customerId,
                 productId,
                 quantity,
@@ -141,7 +141,7 @@ internal class CartsControllerTest {
         val productId = ProductId.randomProductId()
         val quantity = 5
         every {
-            addToCartUseCase.addToCart(
+            addToCartUseCase(
                 customerId,
                 productId,
                 quantity,
@@ -174,7 +174,7 @@ internal class CartsControllerTest {
         val productId = ProductId.randomProductId()
         val quantity = 5
         every {
-            addToCartUseCase.addToCart(
+            addToCartUseCase(
                 customerId,
                 productId,
                 quantity,
@@ -217,7 +217,7 @@ internal class CartsControllerTest {
             .statusCode(NO_CONTENT.statusCode)
 
         // Then
-        verify { emptyCartUseCase.emptyCart(customerId) }
+        verify { emptyCartUseCase(customerId) }
     }
 
     companion object {
