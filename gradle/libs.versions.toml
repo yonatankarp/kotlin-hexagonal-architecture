@@ -7,7 +7,7 @@ kotlin = "1.9.22"
 mockk = "1.13.9"
 restassured = "5.4.0"
 resteasy = "6.2.7.Final"
-spotless = "6.23.3"
+spotless = "6.24.0"
 jakarta = "3.1.0"
 konsist = "0.13.0"
 
