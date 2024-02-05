@@ -1,7 +1,7 @@
 [versions]
 
 coroutines = "1.7.3"
-junit = "5.10.1"
+junit = "5.10.2"
 jvm = "17"
 kotlin = "1.9.22"
 mockk = "1.13.9"
