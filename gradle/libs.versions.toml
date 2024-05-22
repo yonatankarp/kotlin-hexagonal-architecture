@@ -3,7 +3,7 @@
 coroutines = "1.8.1"
 junit = "5.10.2"
 jvm = "17"
-kotlin = "1.9.24"
+kotlin = "2.0.0"
 mockk = "1.13.11"
 restassured = "5.4.0"
 resteasy = "6.2.8.Final"
